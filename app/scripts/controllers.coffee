@@ -2,7 +2,7 @@
 
 ### Controllers ###
 
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['app.services'])
 
 .controller('AppCtrl', [
   '$scope'
@@ -11,7 +11,7 @@ angular.module('app.controllers', [])
   '$rootScope'
 
 ($scope, $location, $resource, $rootScope) ->
-
+  $rootScope.pageTitle = "Mochify"
   # Uses the url to determine if the selected
   # menu item should have the class active.
   $scope.$location = $location
@@ -29,6 +29,7 @@ angular.module('app.controllers', [])
   #
   $scope.getClass = (id) ->
     if $scope.activeNavId.substring(0, id.length) == id
+      $rootScope.pageTitle = "Mochify | " + fcapitaliseFirstLetter(id.slice(1))
       return 'active'
     else
       return ''
@@ -43,9 +44,12 @@ angular.module('app.controllers', [])
 
 .controller('ProjectsCtrl', [
   '$scope'
+  'store'
 
-($scope) ->
-  $scope
+($scope, store) ->
+  # $scope
+  console.log store
+  console.log "LOL"
 ])
 
 .controller('TodoCtrl', [
@@ -83,3 +87,6 @@ angular.module('app.controllers', [])
 
 ])
 
+
+fcapitaliseFirstLetter = (string)->
+  string.charAt(0).toUpperCase() + string.slice(1)

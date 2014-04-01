@@ -30,6 +30,6 @@
     "fullscreen": false
   },
   "dependencies": {
-    "nedb": "~0.9.4"
+    "nedb": "^0.9.4"
   }
 }

@@ -1,7 +1,17 @@
 div(ng-app='ng-app')
-  div(ng-controller='DashboardCtrl')
+  div(ng-controller='ProjectsCtrl')
     .row-fluid
-      .span3
-        h2 Projects
-      .span9
-        h2 Details
+      .span12
+        table.table.table-hover.table-bordered.table-striped
+          thead
+            tr
+              th # 
+              th Directory
+              th Tests
+              th successful run
+          tbody
+            tr(ng-repeat="project in projects")
+              td {{ project.id }}
+              td {{ project.directory }}
+              td {{ project.tests }}
+              td {{ project.successed }}
