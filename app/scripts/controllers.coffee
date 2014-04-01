@@ -13,7 +13,8 @@
 ### Controllers ###
 
 angular.module('app.controllers', ['app.services'])
-
+###################################################
+###################################################
 .controller('AppCtrl', [
   '$scope'
   '$location'
@@ -44,14 +45,16 @@ angular.module('app.controllers', ['app.services'])
     else
       return ''
 ])
-
+###################################################
+###################################################
 .controller('DashboardCtrl', [
   '$scope'
 
 ($scope) ->
   
 ])
-
+###################################################
+###################################################
 .controller('ProjectsCtrl', [
   '$scope'
   'store'
@@ -66,8 +69,12 @@ angular.module('app.controllers', ['app.services'])
       directory: '/Users/Mochify/Desktop/Project'+x
       tests: Math.floor((Math.random()*100)+1)
       successed: Math.floor((Math.random()*1000)+1)
-])
 
+  $scope.open = (id)->
+    console.log id
+])
+###################################################
+###################################################
 .controller('AboutCtrl', [
   '$scope'
 
@@ -78,7 +85,8 @@ angular.module('app.controllers', ['app.services'])
     name: 'Matt aka Naxmeify'
     desc: 'Owner of Ninevillage'
 ])
-
+###################################################
+###################################################
 .controller('TodoCtrl', [
   '$scope'
 

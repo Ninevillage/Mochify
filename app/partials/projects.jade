@@ -20,7 +20,7 @@ div(ng-app='ng-app')
               th Tests
               th successful run
           tbody
-            tr(ng-repeat="project in projects")
+            tr(ng-repeat="project in projects", ng-click="open(project.id)")
               td {{ project.id }}
               td {{ project.directory }}
               td {{ project.tests }}

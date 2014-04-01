@@ -17,8 +17,8 @@
   "window": {
     "//": "screen settings",
     "title": "Mochify",
-    "icon": "link.png",
-    "toolbar": true,
+    "icon": "img/logo.png",
+    "toolbar": false,
     "frame": true,
     "position": "center",
     "width": 1024,
@@ -27,7 +27,8 @@
     "min_height": 768,
     "resizable": true,
     "always-on-top": false,
-    "fullscreen": false
+    "fullscreen": false,
+    "show": false
   },
   "dependencies": {
     "nedb": "^0.9.4"

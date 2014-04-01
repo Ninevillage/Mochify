@@ -1,5 +1,33 @@
 angular.module('partials', [])
 .run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/about.html', [
+'',
+'<h1>About Mochify</h1>',
+'<hr>',
+'<div ng-controller="AboutCtrl">',
+'  <div class="row-fluid">',
+'    <div class="span12">',
+'      <h4>Contributers',
+'        <ul class="thumbnails">',
+'          <li ng-repeat="contributer in contributers" class="span4">',
+'            <div class="thumbnail text-center"><img ng-src="{{ contributer.img }}" alt="">',
+'              <h3>{{ contributer.name }}</h3>',
+'              <p>{{ contributer.desc }}</p>',
+'            </div>',
+'          </li>',
+'        </ul>',
+'      </h4>',
+'    </div>',
+'  </div>',
+'  <div class="row-fluid">',
+'    <div class="span12">',
+'      <h4>License</h4>',
+'      <div class="well">###<br># Copyright (c) 2014 Ninevillage. <br># All Rights reserverd.<br># <br># This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;<br># Unauthorized copying of this file, via any medium is strictly prohibited.<br># Proprietary and confidential<br>###<br></div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/dashboard.html', [
 '',
 '<div ng-app="ng-app">',
@@ -55,7 +83,7 @@ angular.module('partials', [])
 '            </tr>',
 '          </thead>',
 '          <tbody>',
-'            <tr ng-repeat="project in projects">',
+'            <tr ng-repeat="project in projects" ng-click="open(project.id)">',
 '              <td>{{ project.id }}</td>',
 '              <td>{{ project.directory }}</td>',
 '              <td>{{ project.tests }}</td>',
@@ -64,34 +92,6 @@ angular.module('partials', [])
 '          </tbody>',
 '        </table>',
 '      </div>',
-'    </div>',
-'  </div>',
-'</div>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/about.html', [
-'',
-'<h1>About Mochify</h1>',
-'<hr>',
-'<div ng-controller="AboutCtrl">',
-'  <div class="row-fluid">',
-'    <div class="span12">',
-'      <h4>Contributers',
-'        <ul class="thumbnails">',
-'          <li ng-repeat="contributer in contributers" class="span4">',
-'            <div class="thumbnail text-center"><img ng-src="{{ contributer.img }}" alt="">',
-'              <h3>{{ contributer.name }}</h3>',
-'              <p>{{ contributer.desc }}</p>',
-'            </div>',
-'          </li>',
-'        </ul>',
-'      </h4>',
-'    </div>',
-'  </div>',
-'  <div class="row-fluid">',
-'    <div class="span12">',
-'      <h4>License</h4>',
-'      <div class="well">###<br># Copyright (c) 2014 Ninevillage. <br># All Rights reserverd.<br># <br># This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;<br># Unauthorized copying of this file, via any medium is strictly prohibited.<br># Proprietary and confidential<br>###<br></div>',
 '    </div>',
 '  </div>',
 '</div>',''].join("\n"));
