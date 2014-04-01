@@ -48,8 +48,14 @@ angular.module('app.controllers', ['app.services'])
 
 ($scope, store) ->
   # $scope
-  console.log store
-  console.log "LOL"
+  # Dummy
+  $scope.projects = []
+  for x in [1..10]
+    $scope.projects.push 
+      id: x
+      directory: '/Users/Mochify/Desktop/Project'+x
+      tests: Math.floor((Math.random()*100)+1)
+      successed: Math.floor((Math.random()*1000)+1)
 ])
 
 .controller('TodoCtrl', [

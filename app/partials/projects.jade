@@ -2,6 +2,16 @@ div(ng-app='ng-app')
   div(ng-controller='ProjectsCtrl')
     .row-fluid
       .span12
+        .pull-left
+          button.btn.btn-primary 
+            i.icon-plus.icon-white
+            !=" Add Project"
+        form.form-search.pull-right
+          input.input-medium.search-query(type='text')
+          button.btn(type='submit') Search
+
+    .row-fluid
+      .span12
         table.table.table-hover.table-bordered.table-striped
           thead
             tr
