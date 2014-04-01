@@ -22,47 +22,9 @@ angular.module('partials', [])
 '  <li ng-class="getClass(\'/dashboard\')"><a ng-href="#/dashboard">Dashboard</a></li>',
 '  <li ng-class="getClass(\'/projects\')"><a ng-href="#/projects">Projects</a></li>',
 '  <li ng-class="getClass(\'/about\')"><a ng-href="#/about">About</a></li>',
-'</ul>',
-'<ul class="nav pull-right">',
-'  <li><a href="#"><i class="icon-remove"></i></a></li>',
-'  <li><a href="#"><i class="icon"></i></a></li>',
-'</ul>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/partial1.html', [
-'',
-'<p>This is the partial for view 1.</p>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/partial2.html', [
-'',
-'<p>This is the partial for view 2.</p>',
-'<p>',
-'  Showing of \'interpolate\' filter:',
-'  {{ \'Current version is v%VERSION%.\' | interpolate }}',
-'</p>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/todo.html', [
-'',
-'<div ng-app="ng-app">',
-'  <h2>Todo</h2>',
-'  <div ng-controller="TodoCtrl"><span>{{remaining()}} of {{todos.length}} remaining</span> [<a href="" ng-click="archive()">archive</a>]',
-'    <ul class="unstyled">',
-'      <li ng-repeat="todo in todos">',
-'        <label class="checkbox inline">',
-'          <input type="checkbox" ng-model="todo.done"><span class="done{{todo.done}}">{{todo.text}}</span>',
-'        </label>',
-'      </li>',
-'    </ul>',
-'    <form ng-submit="addTodo()" class="form-inline">',
-'      <p>',
-'        <input type="text" ng-model="todoText" size="30" placeholder="add new todo here">',
-'        <input type="submit" value="add" class="btn btn-primary">',
-'      </p>',
-'    </form>',
-'  </div>',
-'</div>',''].join("\n"));
+'</ul><!--ul.nav.pull-right',
+'<li><a href="#"><i class="icon-remove"></i></a></li>',
+'<li><a href="#"><i class="icon"></i></a></li>-->',''].join("\n"));
 }])
 .run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/projects.html', [
@@ -102,6 +64,34 @@ angular.module('partials', [])
 '          </tbody>',
 '        </table>',
 '      </div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/about.html', [
+'',
+'<h1>About Mochify</h1>',
+'<hr>',
+'<div ng-controller="AboutCtrl">',
+'  <div class="row-fluid">',
+'    <div class="span12">',
+'      <h4>Contributers',
+'        <ul class="thumbnails">',
+'          <li ng-repeat="contributer in contributers" class="span4">',
+'            <div class="thumbnail text-center"><img ng-src="{{ contributer.img }}" alt="">',
+'              <h3>{{ contributer.name }}</h3>',
+'              <p>{{ contributer.desc }}</p>',
+'            </div>',
+'          </li>',
+'        </ul>',
+'      </h4>',
+'    </div>',
+'  </div>',
+'  <div class="row-fluid">',
+'    <div class="span12">',
+'      <h4>License</h4>',
+'      <div class="well">###<br># Copyright (c) 2014 Ninevillage. <br># All Rights reserverd.<br># <br># This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;<br># Unauthorized copying of this file, via any medium is strictly prohibited.<br># Proprietary and confidential<br>###<br></div>',
 '    </div>',
 '  </div>',
 '</div>',''].join("\n"));

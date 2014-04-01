@@ -1,0 +1,34 @@
+h1 About Mochify
+hr
+div(ng-controller="AboutCtrl")
+  .row-fluid
+    .span12
+      h4 Contributers
+        ul.thumbnails
+          li.span4(ng-repeat="contributer in contributers")
+            .thumbnail.text-center
+              img(ng-src='{{ contributer.img }}', alt='')
+              h3 {{ contributer.name }}
+              p {{ contributer.desc }}
+
+
+  .row-fluid
+    .span12
+      h4 License
+      .well
+        | ###
+        br
+        | # Copyright (c) 2014 Ninevillage. 
+        br
+        | # All Rights reserverd.
+        br
+        | # 
+        br
+        | # This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;
+        br
+        | # Unauthorized copying of this file, via any medium is strictly prohibited.
+        br
+        | # Proprietary and confidential
+        br
+        | ###
+        br

@@ -22,7 +22,7 @@ App.config([
 
     .when('/dashboard', {templateUrl: '/partials/dashboard.html'})
     .when('/projects', {templateUrl: '/partials/projects.html'})
-    .when('/about', {templateUrl: '/partials/partial2.html'})
+    .when('/about', {templateUrl: '/partials/about.html'})
 
     # Catch all
     .otherwise({redirectTo: '/dashboard'})

@@ -1,3 +1,13 @@
+###
+# Copyright (c) 2014 Mohammed Neundorf - Ninevillage. 
+# All Rights reserverd.
+# 
+# This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;
+# Unauthorized copying of this file, via any medium is strictly prohibited.
+# Proprietary and confidential
+# Written by Mohammed Neundorf - Ninevillage <info@ninevillage.com>
+###
+
 'use strict'
 
 ### Controllers ###
@@ -56,6 +66,17 @@ angular.module('app.controllers', ['app.services'])
       directory: '/Users/Mochify/Desktop/Project'+x
       tests: Math.floor((Math.random()*100)+1)
       successed: Math.floor((Math.random()*1000)+1)
+])
+
+.controller('AboutCtrl', [
+  '$scope'
+
+($scope) ->
+  $scope.contributers = []
+  $scope.contributers.push
+    img: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5('matt@nax.me') + '?s=200'
+    name: 'Matt aka Naxmeify'
+    desc: 'Owner of Ninevillage'
 ])
 
 .controller('TodoCtrl', [
