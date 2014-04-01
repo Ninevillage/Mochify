@@ -56,10 +56,11 @@ angular.module('app.controllers', ['app.services'])
 ###################################################
 ###################################################
 .controller('ProjectsCtrl', [
+  '$location'
   '$scope'
   'store'
 
-($scope, store) ->
+($location, $scope, store) ->
   # $scope
   # Dummy
   $scope.projects = []
@@ -72,6 +73,22 @@ angular.module('app.controllers', ['app.services'])
 
   $scope.open = (id)->
     console.log id
+    $location.path '/projects/'+id
+
+])
+###################################################
+###################################################
+.controller('ProjectCtrl', [
+  '$routeParams'
+  '$scope'
+
+($routeParams, $scope) ->
+  $scope.project = 
+    id: $routeParams.id
+    name: 'Bla'
+    directory: '/Users/Mochify/Project' + $routeParams.id
+    tests: Math.floor((Math.random()*1000)+1)
+    successed: Math.floor((Math.random()*1000)+1)
 ])
 ###################################################
 ###################################################

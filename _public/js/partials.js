@@ -1,5 +1,21 @@
 angular.module('partials', [])
 .run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/dashboard.html', [
+'',
+'<div ng-app="ng-app">',
+'  <div ng-controller="DashboardCtrl">',
+'    <div class="row-fluid">',
+'      <div class="span6">',
+'        <h2>Changelog</h2>',
+'      </div>',
+'      <div class="span6">',
+'        <h2>News</h2>',
+'      </div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/about.html', [
 '',
 '<h1>About Mochify</h1>',
@@ -28,22 +44,6 @@ angular.module('partials', [])
 '</div>',''].join("\n"));
 }])
 .run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/dashboard.html', [
-'',
-'<div ng-app="ng-app">',
-'  <div ng-controller="DashboardCtrl">',
-'    <div class="row-fluid">',
-'      <div class="span6">',
-'        <h2>Changelog</h2>',
-'      </div>',
-'      <div class="span6">',
-'        <h2>News</h2>',
-'      </div>',
-'    </div>',
-'  </div>',
-'</div>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/nav.html', [
 '',
 '<ul class="nav pull-left">',
@@ -53,6 +53,66 @@ angular.module('partials', [])
 '</ul><!--ul.nav.pull-right',
 '<li><a href="#"><i class="icon-remove"></i></a></li>',
 '<li><a href="#"><i class="icon"></i></a></li>-->',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/project.html', [
+'',
+'<div ng-app="ng-app">',
+'  <div ng-controller="ProjectCtrl">',
+'    <div class="row-fluid">',
+'      <div class="span3">',
+'        <table class="table table-striped table-bordered">',
+'          <thead>',
+'            <tr>',
+'              <th>Project Summary</th>',
+'            </tr>',
+'          </thead>',
+'          <tbody>',
+'            <tr>',
+'              <td>Id: {{ project.id }}</td>',
+'            </tr>',
+'            <tr>',
+'              <td>Name: {{ project.name }}</td>',
+'            </tr>',
+'            <tr>',
+'              <td>Dir: {{ project.directory }}</td>',
+'            </tr>',
+'            <tr>',
+'              <td>Tests: {{ project.tests }}</td>',
+'            </tr>',
+'            <tr>',
+'              <td>Successed: {{ project.successed }}</td>',
+'            </tr>',
+'          </tbody>',
+'        </table>',
+'        <div style="display: block;" class="text-center main-loader"><img src="img/loading.gif"></div>',
+'      </div>',
+'      <div class="span9">',
+'        <h4>Test Runner</h4>',
+'        <ul class="feautres">',
+'          <li class="feature">Feature: New Feature',
+'            <div class="feature-step">In order to use cool feature</div>',
+'            <div class="feature-step">as a new user</div>',
+'            <div class="feature-step">I want do include this</div>',
+'            <ul class="scenarios"> ',
+'              <li class="scenario">Scenario: Singing',
+'                <ul class="steps">',
+'                  <li class="step">Given: I am a good singing</li>',
+'                  <li class="step">When: I sing</li>',
+'                  <li class="step">Then: it should sound good</li>',
+'                  <li class="step">And: it should</li>',
+'                  <li class="step">But: it should</li>',
+'                  <li class="stepfile">=== /test/descripe.spec ===</li>',
+'                </ul>',
+'              </li>',
+'            </ul>',
+'          </li>',
+'        </ul>',
+'        <div class="conclusion">5 test complete (3ms)</div>',
+'      </div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
 }])
 .run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/projects.html', [
@@ -73,7 +133,7 @@ angular.module('partials', [])
 '    </div>',
 '    <div class="row-fluid">',
 '      <div class="span12">',
-'        <table class="table table-hover table-bordered table-striped">',
+'        <table class="table table-hover table-bordered table-striped projects">',
 '          <thead>',
 '            <tr>',
 '              <th># </th>',

@@ -1,0 +1,40 @@
+div(ng-app='ng-app')
+  div(ng-controller='ProjectCtrl')
+    .row-fluid
+      .span3
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Project Summary
+          tbody
+            tr
+              td Id: {{ project.id }}
+            tr
+              td Name: {{ project.name }}
+            tr
+              td Dir: {{ project.directory }}
+            tr
+              td Tests: {{ project.tests }}
+            tr
+              td Successed: {{ project.successed }}
+        .text-center.main-loader(style="display: block;")
+          img(src="img/loading.gif")
+      .span9
+        h4 Test Runner
+
+        ul.feautres
+          li.feature Feature: New Feature
+            .feature-step In order to use cool feature
+            .feature-step as a new user
+            .feature-step I want do include this
+            ul.scenarios 
+              li.scenario Scenario: Singing
+                ul.steps
+                  li.step Given: I am a good singing
+                  li.step When: I sing
+                  li.step Then: it should sound good
+                  li.step And: it should
+                  li.step But: it should
+                  li.stepfile === /test/descripe.spec ===
+
+        .conclusion 5 test complete (3ms)

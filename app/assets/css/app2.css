@@ -1,0 +1,15 @@
+body {
+  -webkit-user-select: none;
+}
+
+
+/* Projects Table */
+.projects {
+}
+
+.projects tr {
+  cursor: pointer;
+}
+tr! > td:active {
+  background-color: #99ECF2;
+}
