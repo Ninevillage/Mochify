@@ -34,14 +34,14 @@ angular.module('app.controllers', [])
       return ''
 ])
 
-.controller('MyCtrl1', [
+.controller('DashboardCtrl', [
   '$scope'
 
 ($scope) ->
-  $scope.onePlusOne = 2
+  
 ])
 
-.controller('MyCtrl2', [
+.controller('ProjectsCtrl', [
   '$scope'
 
 ($scope) ->

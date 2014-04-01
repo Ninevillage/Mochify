@@ -18,13 +18,16 @@ html(lang='en', ng-app='app')
       window.brunch['auto-reload'] = {
         enabled: true
       };
-      var path = './';
-      var fs = require('fs');
+      var Gaze = require('gaze').Gaze;
+      var gaze = new Gaze('**/*');
 
-      fs.watch(path, [], function() {
+      gaze.on('all', function(event, filepath) {
         if (location)
-          location.reload(false);
+          location.reload();
       });
+      var gui = require('nw.gui');
+      var MainWindow = gui.Window.get();
+      MainWindow.showDevTools();
     script(src='js/vendor.js')
     script(src='js/partials.js')
     script(src='js/app.js')
@@ -37,16 +40,19 @@ html(lang='en', ng-app='app')
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a(href='/').brand Mochify
+            a(href='#/').brand Mochify
             .nav-collapse
               div(ng-include="'/partials/nav.html'")
       .container.main-content
         div(ng-view)
-        div Angular Brunch seed app: v<span app-version></span>
       .push
 
     footer.footer
       .container
-        p
+        p-pull-left
           small
-            a(href='https://github.com/Ninevillage/Mochify/Issues') Mochify | Issues
+            a(href='https://github.com/Ninevillage/Mochify/issues') Mochify | Issues
+        p.pull-right
+          small
+            != " Version " 
+            span(app-version)

@@ -4,4 +4,4 @@
 
 angular.module('app.services', [])
 
-.factory 'version', -> "0.1"
+.factory 'version', -> require('nw.gui').App.manifest.version

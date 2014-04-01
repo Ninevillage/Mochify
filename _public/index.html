@@ -15,13 +15,16 @@
       window.brunch['auto-reload'] = {
         enabled: true
       };
-      var path = './';
-      var fs = require('fs');
+      var Gaze = require('gaze').Gaze;
+      var gaze = new Gaze('**/*');
       
-      fs.watch(path, [], function() {
+      gaze.on('all', function(event, filepath) {
         if (location)
-          location.reload(false);
+          location.reload();
       });
+      var gui = require('nw.gui');
+      var MainWindow = gui.Window.get();
+      MainWindow.showDevTools();
     </script>
     <script src="js/vendor.js"></script>
     <script src="js/partials.js"></script>
@@ -32,7 +35,7 @@
       <div class="navbar navbar-static-top">
         <div class="navbar-inner">
           <div class="container">
-            <button data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="brand">Mochify</a>
+            <button data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#/" class="brand">Mochify</a>
             <div class="nav-collapse">
               <div ng-include="'/partials/nav.html'"></div>
             </div>
@@ -41,13 +44,13 @@
       </div>
       <div class="container main-content">
         <div ng-view></div>
-        <div>Angular Brunch seed app: v<span app-version></span></div>
       </div>
       <div class="push"></div>
     </div>
     <footer class="footer">
       <div class="container">
-        <p><small><a href="https://github.com/Ninevillage/Mochify/Issues">Mochify | Issues</a></small></p>
+        <p-pull-left><small><a href="https://github.com/Ninevillage/Mochify/issues">Mochify | Issues</a></small></p-pull-left>
+        <p class="pull-right"><small> Version <span app-version></span></small></p>
       </div>
     </footer>
   </body>

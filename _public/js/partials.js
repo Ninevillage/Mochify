@@ -1,12 +1,31 @@
 angular.module('partials', [])
 .run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/dashboard.html', [
+'',
+'<div ng-app="ng-app">',
+'  <div ng-controller="DashboardCtrl">',
+'    <div class="row-fluid">',
+'      <div class="span6">',
+'        <h2>Changelog</h2>',
+'      </div>',
+'      <div class="span6">',
+'        <h2>News</h2>',
+'      </div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/nav.html', [
 '',
-'<ul class="nav">',
-'  <li ng-class="getClass(\'/todo\')"><a ng-href="#/todo">todo</a></li>',
-'  <li ng-class="getClass(\'/view1\')"><a ng-href="#/view1">view1</a></li>',
-'  <li ng-class="getClass(\'/view2\')"><a ng-href="#/view2">view2</a></li>',
-'  <li ng-class="getClass(\'/view2\')"><a ng-href="#/view2">ROFLMAO</a></li>',
+'<ul class="nav pull-left">',
+'  <li ng-class="getClass(\'/dashboard\')"><a ng-href="#/dashboard">Dashboard</a></li>',
+'  <li ng-class="getClass(\'/projects\')"><a ng-href="#/projects">Projects</a></li>',
+'  <li ng-class="getClass(\'/about\')"><a ng-href="#/about">About</a></li>',
+'</ul>',
+'<ul class="nav pull-right">',
+'  <li><a href="#"><i class="icon-remove"></i></a></li>',
+'  <li><a href="#"><i class="icon"></i></a></li>',
 '</ul>',''].join("\n"));
 }])
 .run(['$templateCache', function($templateCache) {
@@ -42,6 +61,22 @@ angular.module('partials', [])
 '        <input type="submit" value="add" class="btn btn-primary">',
 '      </p>',
 '    </form>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/projects.html', [
+'',
+'<div ng-app="ng-app">',
+'  <div ng-controller="DashboardCtrl">',
+'    <div class="row-fluid">',
+'      <div class="span3">',
+'        <h2>Projects</h2>',
+'      </div>',
+'      <div class="span9">',
+'        <h2>Details</h2>',
+'      </div>',
+'    </div>',
 '  </div>',
 '</div>',''].join("\n"));
 }]);
