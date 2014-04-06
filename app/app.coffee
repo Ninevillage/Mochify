@@ -23,6 +23,7 @@ App.config([
     .when('/dashboard', {templateUrl: '/partials/dashboard.html'})
     .when('/projects', {templateUrl: '/partials/projects.html'})
     .when('/projects/:id', {templateUrl: '/partials/project.html'})
+    .when('/settings', {templateUrl: '/partials/settings.html'})
     .when('/about', {templateUrl: '/partials/about.html'})
 
     # Catch all

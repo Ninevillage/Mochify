@@ -1,21 +1,5 @@
 angular.module('partials', [])
 .run(['$templateCache', function($templateCache) {
-  return $templateCache.put('/partials/dashboard.html', [
-'',
-'<div ng-app="ng-app">',
-'  <div ng-controller="DashboardCtrl">',
-'    <div class="row-fluid">',
-'      <div class="span6">',
-'        <h2>Changelog</h2>',
-'      </div>',
-'      <div class="span6">',
-'        <h2>News</h2>',
-'      </div>',
-'    </div>',
-'  </div>',
-'</div>',''].join("\n"));
-}])
-.run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/about.html', [
 '',
 '<h1>About Mochify</h1>',
@@ -38,7 +22,23 @@ angular.module('partials', [])
 '  <div class="row-fluid">',
 '    <div class="span12">',
 '      <h4>License</h4>',
-'      <div class="well">###<br># Copyright (c) 2014 Ninevillage. <br># All Rights reserverd.<br># <br># This software is the confidential intellectual property of Mohammed Neundorf - Ninevillage;<br># Unauthorized copying of this file, via any medium is strictly prohibited.<br># Proprietary and confidential<br>###<br></div>',
+'      <div class="well">###<br># Copyright (c) 2014 Ninevillage. <br># All Rights reserverd.<br># <br># This software is the confidential intellectual property of Ninevillage;<br># Unauthorized copying of this file, via any medium is strictly prohibited.<br># Proprietary and confidential<br>###<br></div>',
+'    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/dashboard.html', [
+'',
+'<div ng-app="ng-app">',
+'  <div ng-controller="DashboardCtrl">',
+'    <div class="row-fluid">',
+'      <div class="span6">',
+'        <h2>Changelog</h2>',
+'      </div>',
+'      <div class="span6">',
+'        <h2>News</h2>',
+'      </div>',
 '    </div>',
 '  </div>',
 '</div>',''].join("\n"));
@@ -49,6 +49,7 @@ angular.module('partials', [])
 '<ul class="nav pull-left">',
 '  <li ng-class="getClass(\'/dashboard\')"><a ng-href="#/dashboard">Dashboard</a></li>',
 '  <li ng-class="getClass(\'/projects\')"><a ng-href="#/projects">Projects</a></li>',
+'  <li ng-class="getClass(\'/settings\')"><a ng-href="#/settings">Settings</a></li>',
 '  <li ng-class="getClass(\'/about\')"><a ng-href="#/about">About</a></li>',
 '</ul><!--ul.nav.pull-right',
 '<li><a href="#"><i class="icon-remove"></i></a></li>',
@@ -153,6 +154,30 @@ angular.module('partials', [])
 '        </table>',
 '      </div>',
 '    </div>',
+'  </div>',
+'</div>',''].join("\n"));
+}])
+.run(['$templateCache', function($templateCache) {
+  return $templateCache.put('/partials/settings.html', [
+'',
+'<div ng-controller="SettingsCtrl">',
+'  <ul id="settings-tab" class="nav nav-tabs">',
+'    <li class="active"><a href="" data-toggle="general">General</a></li>',
+'    <li><a href="" data-toggle="projects">Projects</a></li>',
+'    <li><a href="" data-toggle="testing">Testing</a></li>',
+'    <li><a href="" data-toggle="extras">Extras</a></li>',
+'  </ul>',
+'  <div class="tab-content">',
+'    <div id="general" class="tab-pane">....</div>',
+'  </div>',
+'  <div class="tab-content">',
+'    <div id="projects" class="tab-pane">....</div>',
+'  </div>',
+'  <div class="tab-content">',
+'    <div id="testing" class="tab-pane">....</div>',
+'  </div>',
+'  <div class="tab-content">',
+'    <div id="extras" class="tab-pane">....</div>',
 '  </div>',
 '</div>',''].join("\n"));
 }]);
