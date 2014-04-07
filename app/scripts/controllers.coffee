@@ -59,7 +59,9 @@ angular.module('app.controllers', ['app.services'])
   '$scope'
 
 ($scope) ->
-  
+  $('#settings-tab a').click (e)->
+    e.preventDefault()
+    $(this).tab('show')
 ])
 ###################################################
 ###################################################

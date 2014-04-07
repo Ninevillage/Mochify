@@ -32,6 +32,11 @@ html(lang='en', ng-app='app')
       onload = function() {
         MainWindow.show();
       };
+    script.
+      var loc = window.location.href
+      if (loc.indexOf("#") != -1 &&  loc.indexOf("#!") == -1 ){
+        window.location.href = loc.replace("#", "#!");
+      }
     script(src='js/md5.js')
     script(src='js/vendor.js')
     script(src='js/jQuery.cssParentSelector.js')

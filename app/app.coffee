@@ -30,5 +30,6 @@ App.config([
     .otherwise({redirectTo: '/dashboard'})
 
   # Without server side support html5 must be disabled.
+  $locationProvider.hashPrefix('!')
   $locationProvider.html5Mode(false)
 ])
