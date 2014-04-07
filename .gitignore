@@ -9,9 +9,3 @@ bower_components
 *.log
 
 dist
-
-_public/*.js
-_public/*.css
-_public/*.html
-_public/*.json
-_public/node_modules
