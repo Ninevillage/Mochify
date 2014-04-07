@@ -2,20 +2,21 @@ h1 About Mochify
 hr
 div(ng-controller="AboutCtrl")
   .row-fluid
-    .span12
-      h4 Contributers
-        ul.thumbnails
-          li.span4(ng-repeat="contributer in contributers")
-            .thumbnail.text-center
-              img(ng-src='{{ contributer.img }}', alt='')
-              h3 {{ contributer.name }}
-              p {{ contributer.desc }}
+    .col-md-6
+      h4 Mochify Infos
+      dl.dl-horizontal
+        div(ng-repeat="(key, value) in infos")
+          dt {{ key }}
+          dd {{ value }}
 
-
-  .row-fluid
-    .span12
+      h4 Mochify Dependencies
+      dl.dl-horizontal
+        div(ng-repeat="(key, value) in dependencies")
+          dt {{ key }}
+          dd {{ value }}
+    .col-md-6
       h4 License
-      .well
+      .well.small
         | ###
         br
         | # Copyright (c) 2014 Ninevillage. 

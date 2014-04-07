@@ -106,11 +106,11 @@ angular.module('app.controllers', ['app.services'])
   '$scope'
 
 ($scope) ->
-  $scope.contributers = []
-  $scope.contributers.push
-    img: 'http://www.gravatar.com/avatar/' + CryptoJS.MD5('matt@nax.me') + '?s=200'
-    name: 'Matt aka Naxmeify'
-    desc: 'Owner of Ninevillage'
+  manifest = require('nw.gui').App.manifest
+  $scope.infos = {}
+  $scope.infos.name = manifest.name
+  $scope.infos.version = manifest.version
+  $scope.dependencies = manifest.dependencies
 ])
 ###################################################
 ###################################################
