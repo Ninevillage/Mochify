@@ -99,6 +99,16 @@ angular.module('app.controllers', ['app.services'])
     directory: '/Users/Mochify/Project' + $routeParams.id
     tests: Math.floor((Math.random()*1000)+1)
     successed: Math.floor((Math.random()*1000)+1)
+  $scope.files = []
+  $scope.files.push
+    name: "mocha.test1.js"
+    tested: false
+  $scope.files.push
+    name: "mocha.test2.js"
+    tested: false
+  $scope.files.push
+    name: "mocha.test3.js"
+    tested: false
 ])
 ###################################################
 ###################################################

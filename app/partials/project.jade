@@ -1,7 +1,7 @@
 div(ng-app='ng-app')
   div(ng-controller='ProjectCtrl')
     .row-fluid
-      .span3
+      .col-md-3
         table.table.table-striped.table-bordered
           thead
             tr
@@ -19,22 +19,44 @@ div(ng-app='ng-app')
               td Successed: {{ project.successed }}
         .text-center.main-loader(style="display: block;")
           img(src="img/loading.gif")
-      .span9
-        h4 Test Runner
-
-        ul.feautres
-          li.feature Feature: New Feature
+      .col-md-4
+        h4 Test Files
+        .list-group
+          a.list-group-item(href='#', ng-repeat='file in files')
+            h5.list-group-item-heading {{file.name}}
+            p.list-group-item-text
+              | Tested: {{ file.tested }}
+      .col-md-5.projectrunner
+        h4 Mocha Test
+        .features
+          .feature Feature: 
+            span New Feature
             .feature-step In order to use cool feature
             .feature-step as a new user
             .feature-step I want do include this
-            ul.scenarios 
-              li.scenario Scenario: Singing
-                ul.steps
-                  li.step Given: I am a good singing
-                  li.step When: I sing
-                  li.step Then: it should sound good
-                  li.step And: it should
-                  li.step But: it should
-                  li.stepfile === /test/descripe.spec ===
+            .scenarios 
+              .scenario Scenario: 
+                span Singing
+                .steps
+                  .step 
+                    .def Given: 
+                    span I am a good singing
+                    .time (1000ms)
+                  .step 
+                    .def When: 
+                    span I sing
+                  .step 
+                    .def Then: 
+                    span it should sound good
+                  .step 
+                    .def And: 
+                    span it should
+                  .step 
+                    .def But: 
+                    span it should
+                  .stepfile === /test/descripe.spec ===
 
-        .conclusion 5 test complete (3ms)
+          .conclusion 
+            | 5 tests complete 
+            .failed (3 tests failed)
+            .time (3ms)

@@ -32,3 +32,71 @@ body {
   color: grey;
 }
 
+// list of tests
+
+
+// Project Test Runner
+// States
+// - Waiting
+// - Progress
+// - Pending
+// - Failed
+// - Success
+.projectrunner {
+  .features {
+    .feature {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #ACDACD;
+      span {
+        font-weight: normal;
+        color: black;
+      }
+      .feature-step {
+        font-size: 11pt;
+        font-weight: normal;
+        color: grey;
+        margin-left: 20px;
+      }
+      .scenarios {
+        .scenario {
+          font-size: 12pt;
+          margin-left: 10px;
+          margin-top: 10px;
+          .steps {
+            .step {
+              color: #DCADCA;
+              margin-left: 10px;
+              .def {
+                display: inline-block;
+                width: 50px;
+                text-align: right;
+                margin-right: 10px;
+              }
+            }
+            .stepfile {
+              color: #FA5D5D;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+    .conclusion {
+      margin: 10px 0px;
+      font-size: 10pt;
+      font-weight: bold;
+      color: #444;
+      .failed {
+        display: inline-block;
+        color: red;
+        font-size: 10pt;
+      }
+    }
+    .time {
+      display: inline-block;
+      color: red;
+      font-size: 10pt;
+    }
+  }
+}
