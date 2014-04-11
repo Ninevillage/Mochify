@@ -5,7 +5,7 @@ Mochify
 ## Extended with
 * [Mocha Cakes](https://github.com/quangv/mocha-cakes)
 
-## First Screenshot
+## Current Screenshot
 ![Screenshot](https://raw.githubusercontent.com/Ninevillage/Mochify/master/screenshot2.png)
 
 ## Loading Gifs
