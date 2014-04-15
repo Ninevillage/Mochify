@@ -1,4 +1,4 @@
-Mochify
+<img src="https://raw.githubusercontent.com/Ninevillage/Mochify/master/app/assets/img/logo.png" height="40" alt="Mochify Logo"/> Mochify
 =====
 [Mocha](https://github.com/visionmedia/mocha) Testing Client
 
